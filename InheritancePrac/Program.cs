@@ -15,7 +15,7 @@ namespace InheritancePrac
             List<Cat> Cats = new List<Cat> { new Cat(), new Cat(), new Cat() };
 
             foreach( Dog dag in Dogs)
-            {
+            { 
                 dag.Eat();
                 dag.Sleep();
                 dag.Bark();

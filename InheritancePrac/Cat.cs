@@ -6,14 +6,9 @@ using System.Threading.Tasks;
 
 namespace InheritancePrac
 {
-    class Cat
+    class Cat : Animal
     {
-        public int Age { get; set; }
 
-        public Cat() { this.Age = 0; }
-
-        public void Eat() { Console.WriteLine("냠냠"); }
-        public void Sleep() { Console.WriteLine("쿨쿨"); }
         public void Meow() { Console.WriteLine("냐옹"); }
     }
 }

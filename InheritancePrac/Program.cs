@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Data.OleDb;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,21 +12,24 @@ namespace InheritancePrac
     {
         static void Main(string[] args)
         {
-            List<Dog> Dogs = new List<Dog> { new Dog(), new Dog(), new Dog() };
-            List<Cat> Cats = new List<Cat> { new Cat(), new Cat(), new Cat() };
-
-            foreach( Dog dag in Dogs)
-            { 
-                dag.Eat();
-                dag.Sleep();
-                dag.Bark();
-            }
-
-            foreach(Cat cat in Cats)
+            List<Animal> animals = new List<Animal>
             {
-                cat.Eat();
-                cat.Sleep();
-                cat.Meow();
+                new Dog(), new Cat(), new Cat(),
+                new Dog(), new Dog(), new Cat()
+            };
+
+            foreach(var item in animals)
+            {
+                item.Eat();
+                item.Sleep();
+                if(item is Dog)
+                {
+                    ((Dog)item).Bark();
+                } 
+                else if(item is Cat)
+                {
+                    ((Cat)item).Meow();
+                }
             }
         }
     }
